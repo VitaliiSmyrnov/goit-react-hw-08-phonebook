@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-height: 90vh;
+  max-height: 80vh;
   overflow: auto;
 
   width: 410px;
@@ -39,6 +39,5 @@ export const Section = styled.div`
 `;
 
 export const Message = styled.p`
-  margin-top: ${p => p.theme.spacing(3)};
-`
-
+  margin-top: ${p => p.theme.spacing(4)};
+`;

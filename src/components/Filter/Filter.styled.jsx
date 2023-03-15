@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  margin-top: ${p => p.theme.spacing(2)};
+  margin-top: ${p => p.theme.spacing(3)};
 
   label {
     color: ${p => p.theme.colors.label};

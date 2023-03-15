@@ -1,19 +1,22 @@
-import { Toaster } from 'react-hot-toast';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
-import { fetchContacts } from 'redux/operations';
+import {
+  selectContacts,
+  selectError,
+  selectIsLoading,
+} from 'redux/contacts/selectors';
+import { getContacts } from 'redux/contacts/operations';
 import { ContactForm, Filter, ContactList } from 'components';
-import { Container, Wrapper, Section, Message } from './App.styled';
+import { Container, Wrapper, Section, Message } from './Contacts.styled';
 
-export const App = () => {
+const Contacts = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(getContacts());
   }, [dispatch]);
 
   return (
@@ -38,8 +41,8 @@ export const App = () => {
           )}
         </Section>
       </Wrapper>
-
-      <Toaster />
     </Container>
   );
 };
+
+export default Contacts;
